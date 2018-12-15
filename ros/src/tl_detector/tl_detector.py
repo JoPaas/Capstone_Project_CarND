@@ -13,7 +13,7 @@ from timeit import default_timer as timer
 import yaml
 
 STATE_COUNT_THRESHOLD = 3
-TL_DETECTOR_CYCLE_TIME = 0.1
+TL_DETECTOR_CYCLE_TIME = 0.3
 
 class TLDetector(object):
     def __init__(self):
@@ -90,6 +90,8 @@ class TLDetector(object):
         light_wp, state = self.process_traffic_lights()
         EndTime = timer()
         self.TLProcessingTime = EndTime - Startime
+
+	print("ProcessingTime: {}s".format(self.TLProcessingTime))
 
         '''
         Publish upcoming red lights at camera frequency.
