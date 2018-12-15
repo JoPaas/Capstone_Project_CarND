@@ -73,8 +73,9 @@ class WaypointUpdater(object):
 	
 	if (self.stopline_wp_idx == -1) or (self.stopline_wp_idx == farthest_idx):
 	    lane.waypoints = base_wps
+	    print("Following waypoints!")
 	else:
-	    print("stopping for trafficlight")
+	    print("Stopping because of TrafficLight!")
 	    lane.waypoints = self.decelerate_waypoints(base_wps, closest_idx)
 
 	return lane
