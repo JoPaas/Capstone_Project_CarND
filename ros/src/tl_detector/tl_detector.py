@@ -19,6 +19,7 @@ class TLDetector(object):
 
         self.pose = None
         self.waypoints = None
+        self.waypoint_tree = None
         self.camera_image = None
         self.lights = []
 
@@ -95,13 +96,13 @@ class TLDetector(object):
             https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
         Args:
             x: x coordinate to match a waypoint to
-	    y: y coordinate to match a waypoint to
+            y: y coordinate to match a waypoint to
 
         Returns:
             int: index of the closest waypoint in self.waypoints
 
         """
-	closest_idx = self.waypoint_tree.query([x,y],1)[1]
+        closest_idx = self.waypoint_tree.query([x,y],1)[1]
         return closest_idx
 
     def get_light_state(self, light):
@@ -114,10 +115,10 @@ class TLDetector(object):
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
 
         """
-	return light.state
+        return light.state
         #if(not self.has_image):
-        #    self.prev_light_loc = None
-        #    return False
+        #self.prev_light_loc = None
+        #return False
 
         #cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
 
