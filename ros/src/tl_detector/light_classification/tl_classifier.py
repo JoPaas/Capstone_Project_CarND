@@ -38,7 +38,7 @@ class TLClassifier(object):
                 od_graph_def.ParseFromString(serialized_graph)
                 tf.import_graph_def(od_graph_def, name='')
 
-    def DetectAndClassify(self, image):
+    def Process(self, image):
         """Determines the color of the traffic light in the image
 
         Args:
