@@ -124,8 +124,7 @@ class TLDetector(object):
 
         """
         if(not self.has_image):
-            self.prev_light_loc = None
-            return False
+            return light.state
 
         cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
 
@@ -160,9 +159,8 @@ class TLDetector(object):
                     diff = d
                     closest_light = light
                     line_wp_idx = temp_wp_idx
-        if light:
-            state = self.get_light_state(light)
-            print(state)
+        if closest_light:
+            state = self.get_light_state(closest_light)
             return line_wp_idx, state
         self.waypoints = None
         return -1, TrafficLight.UNKNOWN
