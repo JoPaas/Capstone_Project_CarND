@@ -6,7 +6,7 @@ import cv2
 import rospy
 import yaml
 
-IMAGE_PATH = os.path.dirname(os.path.realpath(__file__)) + '/../../../../test_images/simulator/'
+IMAGE_PATH = os.path.dirname(os.path.realpath(__file__)) + '/test_images/simulator/'
 MAX_IMAGE_WIDTH = 300
 MAX_IMAGE_HEIGHT = 300
 RECORD_IMAGES = False
@@ -60,7 +60,7 @@ class TLClassifier(object):
         detection_boxes = self.model_graph.get_tensor_by_name('detection_boxes:0')
         detection_scores = self.model_graph.get_tensor_by_name('detection_scores:0')
         detection_classes = self.model_graph.get_tensor_by_name('detection_classes:0')
-        image_np = self.preProcImage(image_np)
+        image_np = self.preProcessImage(image_np)
 
         (boxes, scores, classes) = self.session.run(
             [detection_boxes, detection_scores, detection_classes],
@@ -81,7 +81,7 @@ class TLClassifier(object):
 
         return None, None
 
-    def preProcImage(self, image):
+    def preProcessImage(self, image):
         image = cv2.resize(image, (MAX_IMAGE_WIDTH, MAX_IMAGE_HEIGHT))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         return image
