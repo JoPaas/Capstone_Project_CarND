@@ -9,10 +9,11 @@ from cv_bridge import CvBridge
 from light_classification.tl_classifier import TLClassifier
 import tf
 from scipy.spatial import KDTree
-import cv2
+from timeit import default_timer as timer
 import yaml
 
 STATE_COUNT_THRESHOLD = 3
+TL_DETECTOR_CYCLE_TIME = 0.1
 
 class TLDetector(object):
     def __init__(self):
@@ -45,6 +46,7 @@ class TLDetector(object):
 
         self.bridge = CvBridge()
         self.TLDetectorClassifier = TLClassifier()
+        self.TLProcessingTime = 0
         self.listener = tf.TransformListener()
 
         self.state = TrafficLight.UNKNOWN
@@ -77,9 +79,17 @@ class TLDetector(object):
             msg (Image): image from car-mounted camera
 
         """
+        # Skip Processing of Image if processing time is too long
+        if self.TLProcessingTime > 0:
+            self.TLProcessingTime -= TL_DETECTOR_CYCLE_TIME
+            return
+
         self.has_image = True
         self.camera_image = msg
+        Startime = timer()
         light_wp, state = self.process_traffic_lights()
+        EndTime = timer()
+        self.TLProcessingTime = EndTime - Startime
 
         '''
         Publish upcoming red lights at camera frequency.
