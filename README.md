@@ -1,4 +1,27 @@
+![image alt text](imgs/readme_image_0.jpg)
+
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+
+## Team Dragonfly
+
+### Florian Maile
+
+[f.maile@gmx.de](mailto:f.maile@gmx.de)
+Project Contributions: Team Lead, traffic light detector and classification.
+
+### Johannes Paas
+
+[Johannes.paas@outlook.com](mailto:Johannes.paas@outlook.com)
+
+Project contributions: Waypoint Updater
+
+### Vihar Chervenkov
+
+[vihar.chervenkov@gmail.com](mailto:vihar.chervenkov@gmail.com)
+
+Project Contributions: 
+
+Implemented and tuned PID Controller for throttle, proportional controller for brakes, path/velocity planning for stopping at traffic lights
 
 Please use **one** of the two installation options, either native **or** docker installation.
 
