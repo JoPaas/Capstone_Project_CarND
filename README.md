@@ -7,6 +7,7 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
 ### Florian Maile
 
 [f.maile@gmx.de](mailto:f.maile@gmx.de)
+
 Project Contributions: Team Lead, traffic light detector and classification.
 
 ### Johannes Paas
