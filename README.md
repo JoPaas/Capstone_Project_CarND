@@ -20,9 +20,7 @@ Project contributions: Waypoint Updater
 
 [vihar.chervenkov@gmail.com](mailto:vihar.chervenkov@gmail.com)
 
-Project Contributions: 
-
-Implemented and tuned PID Controller for throttle, proportional controller for brakes, path/velocity planning for stopping at traffic lights
+Project Contributions: Implemented and tuned PID Controller for throttle, proportional controller for brakes, path/velocity planning for stopping at traffic lights
 
 Please use **one** of the two installation options, either native **or** docker installation.
 
