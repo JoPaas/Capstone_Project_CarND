@@ -22,6 +22,8 @@ Project contributions: Waypoint Updater
 
 Project Contributions: Implemented and tuned PID Controller for throttle, proportional controller for brakes, path/velocity planning for stopping at traffic lights
 
+## Installation
+
 Please use **one** of the two installation options, either native **or** docker installation.
 
 ### Native Installation
